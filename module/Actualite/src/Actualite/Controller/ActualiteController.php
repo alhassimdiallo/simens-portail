@@ -14,10 +14,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Actualite\Form\ActualiteForm;
 use Zend\Json\Json;
-
-
-
-
+/*Teste 2*/
 class ActualiteController extends AbstractActionController
 {
 	protected $articleTable;
