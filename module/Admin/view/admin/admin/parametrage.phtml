@@ -595,9 +595,10 @@ z-index: 1;
 	left: -5px;
 }
 
-#RetourMenu1, #RetourMenu2
+#RetourMenu1, #RetourMenu2, #RetourMenu3
 {
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 #AjoutImgMenu1_right
@@ -706,6 +707,65 @@ z-index: 1;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
+#MenuBonnesPratiquesMenu table
+{
+	width: 100%;
+	margin-top: 7px;
+}
+
+#MenuBonnesPratiquesMenu table tr td
+{
+	width: 100%;
+	height: 35px;
+}
+
+.niveau_bp_1, .niveau_bp_2, .niveau_bp_3, .niveau_bp_4
+{
+	background: #eeeeee; 
+	max-height: 1000px; 
+	border: 1px solid #cccccc;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	padding: 5px;
+	color: black;
+	cursor: pointer;
+}
+
+.contenu_niveau_bp_1, .contenu_niveau_bp_2, .contenu_niveau_bp_3, .contenu_niveau_bp_4
+{
+	background: #fcfcfc; 
+	border: 1px solid #cccccc;
+	border-top: 1px solid #49afcd;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	padding: 5px;
+	color: black;
+	margin-bottom: 15px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-left: 1px;
+	width: 98%;
+}
+
+.contenu_niveau_bp_1
+{
+	height: 220px; 
+}
+
+.niveau_bp_1 span, .niveau_bp_2 span, .niveau_bp_3 span, .niveau_bp_4 span 
+{
+	color: black;
+	font-size: 15px;
+	font-family: time new romans;
+	margin-left: -5px;
+}
+
+.niveau_bp_1 img, .niveau_bp_2 img, .niveau_bp_3 img, .niveau_bp_4 img 
+{
+	position: relative;
+	float: left;
+	top: -5px; 
+	left: -5px;
+}
+
 </style>
 
 <!-- *_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_**_*_*_*_*_*_*_*_*_*_*_*_**_*_*_*__*_**_*_*_*_*_*_*_*_*_*__**__*_**_*_*_*__*_*_*_**_ -->
@@ -743,7 +803,14 @@ z-index: 1;
      </td>
      
      <td>
-       <!-- ****** -->
+       <div>
+           <p>
+             <a>
+			   <img id="BonnesPratiquesMenu" src="<?php echo $this->basePath().'/img/article/bonne Pratiq.png'; ?>" >
+		     </a>
+		   </p>
+		   <label> Bonnes pratiques </label>
+       </div>
      </td>
      
      <td>
@@ -953,6 +1020,82 @@ z-index: 1;
  
 </div>
 
+
+
+
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+
+<div id="MenuBonnesPratiquesMenu">
+<a><img id="RetourMenu3" src="<?php echo $this->basePath().'/img/article/left_16.png'; ?>" ></a>
+  
+ <table>
+   <!-- NIVEAU 1 --> <!-- NIVEAU 1 --> <!-- NIVEAU 1 --> <!-- NIVEAU 1 -->
+   <tr>
+      <td>
+        <div class="niveau_bp_1"> <img src="<?php echo $this->basePath().'/img/article/minus.png'; ?>" > <span> Alimentaires </span> </div>
+        <div class="contenu_niveau_bp_1">  
+        
+
+        </div>
+      </td>
+   </tr>
+   
+   <!-- NIVEAU 2 --> <!-- NIVEAU 2 --> <!-- NIVEAU 2 --> <!-- NIVEAU 2 -->
+   <tr>
+      <td>
+        <div class="niveau_bp_2"> <img src="<?php echo $this->basePath().'/img/article/plus.png'; ?>" > <span> Hygi&eacute;niques </span> </div>
+        <div class="contenu_niveau_bp_2"> 
+           
+           
+           
+        </div>
+      
+      </td>
+   </tr>
+   
+   <!-- NIVEAU 3 --> <!-- NIVEAU 3 --> <!-- NIVEAU 3 --> <!-- NIVEAU 3 -->
+   <tr>
+      <td>
+        <div class="niveau_bp_3"> <img src="<?php echo $this->basePath().'/img/article/plus.png'; ?>" > <span> Physiques </span> </div>
+        <div class="contenu_niveau_bp_3"> 
+           
+           
+        </div>
+        
+      </td>
+   </tr>
+   
+   <!-- NIVEAU 4 --> <!-- NIVEAU 4 --> <!-- NIVEAU 4 --> <!-- NIVEAU 4 -->
+   <tr>
+      <td>
+        <div class="niveau_bp_4"> <img src="<?php echo $this->basePath().'/img/article/plus.png'; ?>" > <span> Diverses </span> </div>
+        <div class="contenu_niveau_bp_4"> 
+           
+           
+        </div>
+        
+      </td>
+   </tr>
+ </table>
+
+</div>
+
+
+
+
+
+
+
+
 </div>
 </div>
 
@@ -981,10 +1124,20 @@ z-index: 1;
 scriptInitialisation();
 scriptListeDesImages();
 
+//***GESTION DES PLIANTS ET DEPLIANTS***
 initAnimation();
 animationPliantDepliant1();
 animationPliantDepliant2();
 animationPliantDepliant3();
+
+//***GESTION DES PLIANTS ET DEPLIANTS BONNES PRATIQUES***
+initAnimationBP();
+animationPliantDepliantBP1();
+animationPliantDepliantBP2();
+animationPliantDepliantBP3();
+animationPliantDepliantBP4();
+
+
 
 <?php if( $this->pub2 ) { ?> 
 

@@ -21,9 +21,15 @@ function scriptInitialisation() {
 	},function(){
 		$(this).css('background','url("/www-simens-sn/public/img/article/publicite_1.png") no-repeat');
 	});
+	
+	$('#BonnesPratiquesMenu').hover(function(){
+		$(this).css('background','url("/www-simens-sn/public/img/article/publicite_2.png") no-repeat');
+	},function(){
+		$(this).css('background','url("/www-simens-sn/public/img/article/publicite_1.png") no-repeat');
+	});
+	
 
-
-	$('#MenuImageEnTeteDefilant, #MenuPubliciteMenu').toggle(false);
+	$('#MenuImageEnTeteDefilant, #MenuPubliciteMenu, #MenuBonnesPratiquesMenu').toggle(false);
 
 	//<!-- ***GESTION DES IMGES DE L'ENTETE*** -->
 	//<!-- ***GESTION DES IMGES DE L'ENTETE*** -->
@@ -100,6 +106,22 @@ function scriptInitialisation() {
 		});
 	});
 
+	
+	//<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+	//<!-- ***GESTION DU MENU BONNES PRATIQUES*** -->
+	$('#BonnesPratiquesMenu').click(function(){
+		$('#face1, #MenuParametrage').fadeOut(function(){
+			$('#TitreVueParametrage').html("Gestion du menu 'Bonnes Pratiques'");
+			$('#face2').fadeIn().css({'visibility':'visible'});
+			$('#MenuBonnesPratiquesMenu').fadeIn();
+			$('#RetourMenu3').click(function(){
+				$('#face2, #MenuBonnesPratiquesMenu').fadeOut(function(){
+					$('#TitreVueParametrage').html("Param&eacute;trage");
+					$('#face1, #MenuParametrage').fadeIn();
+				});
+			});
+		});
+	});
 	
 	//AJOUTER UNE IMAGE
 	//AJOUTER UNE IMAGE
@@ -621,6 +643,130 @@ function animationPliantDepliant3() {
 			);
 		depliantPlus3();
 		$('.contenu_niveau_3').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+
+//*************GESTION DES PLIANTS ET DEPLIANTS BONNES PRATIQUES******************
+//*************GESTION DES PLIANTS ET DEPLIANTS BONNES PRATIQUES******************
+//*************GESTION DES PLIANTS ET DEPLIANTS BONNES PRATIQUES******************
+function initAnimationBP() {
+	$('.contenu_niveau_bp_1').toggle(true);
+	$('.contenu_niveau_bp_2').toggle(false);
+	$('.contenu_niveau_bp_3').toggle(false);	
+	$('.contenu_niveau_bp_4').toggle(false);
+}
+
+/**INFO NIVEAU BP 1**/
+/**INFO NIVEAU BP 1**/
+function depliantPlusBP1() {
+	$('.niveau_bp_1').click(function(){
+		$(".niveau_bp_1").replaceWith(
+			"<div class='niveau_bp_1'> <img src='"+tabUrl[0]+"public/img/article/minus.png' /> <span> Alimentaires </span> </div>"
+			);
+		animationPliantDepliantBP1();
+		$('.contenu_niveau_bp_1').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+function animationPliantDepliantBP1() {
+	$('.niveau_bp_1').click(function(){
+	    $(".niveau_bp_1").replaceWith(
+			"<div class='niveau_bp_1'> <img src='"+tabUrl[0]+"public/img/article/plus.png' /> <span> Alimentaires </span> </div>"
+			);
+		depliantPlusBP1();
+		$('.contenu_niveau_bp_1').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+/**INFO NIVEAU BP 2**/
+/**INFO NIVEAU BP 2**/
+function depliantPlusBP2() {
+	$('.niveau_bp_2').click(function(){
+		$(".niveau_bp_2").replaceWith(
+			"<div class='niveau_bp_2'> <img src='"+tabUrl[0]+"public/img/article/plus.png' /> <span> Hygi&eacute;niques </span> </div>"
+			);
+		animationPliantDepliantBP2();
+		$('.contenu_niveau_bp_2').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+function animationPliantDepliantBP2() {
+	$('.niveau_bp_2').click(function(){
+	    $(".niveau_bp_2").replaceWith(
+			"<div class='niveau_bp_2'> <img src='"+tabUrl[0]+"public/img/article/minus.png' /> <span> Hygi&eacute;niques </span> </div>"
+			);
+		depliantPlusBP2();
+		$('.contenu_niveau_bp_2').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+/**INFO NIVEAU BP 3**/
+/**INFO NIVEAU BP 3**/
+function depliantPlusBP3() {
+	$('.niveau_bp_3').click(function(){
+		$(".niveau_bp_3").replaceWith(
+			"<div class='niveau_bp_3'> <img src='"+tabUrl[0]+"public/img/article/plus.png' /> <span> Physiques </span> </div>"
+			);
+		animationPliantDepliantBP3();
+		$('.contenu_niveau_bp_3').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+function animationPliantDepliantBP3() {
+	$('.niveau_bp_3').click(function(){
+	    $(".niveau_bp_3").replaceWith(
+			"<div class='niveau_bp_3'> <img src='"+tabUrl[0]+"public/img/article/minus.png' /> <span> Physiques </span> </div>"
+			);
+		depliantPlusBP3();
+		$('.contenu_niveau_bp_3').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+
+/**INFO NIVEAU BP 4**/
+/**INFO NIVEAU BP 4**/
+function depliantPlusBP4() {
+	$('.niveau_bp_4').click(function(){
+		$(".niveau_bp_4").replaceWith(
+			"<div class='niveau_bp_4'> <img src='"+tabUrl[0]+"public/img/article/plus.png' /> <span> Diverses </span> </div>"
+			);
+		animationPliantDepliantBP4();
+		$('.contenu_niveau_bp_4').animate({
+			height : 'toggle'
+		},500);
+		return false;
+	});
+}
+
+function animationPliantDepliantBP4() {
+	$('.niveau_bp_4').click(function(){
+	    $(".niveau_bp_4").replaceWith(
+			"<div class='niveau_bp_4'> <img src='"+tabUrl[0]+"public/img/article/minus.png' /> <span> Diverses </span> </div>"
+			);
+		depliantPlusBP4();
+		$('.contenu_niveau_bp_4').animate({
 			height : 'toggle'
 		},500);
 		return false;
